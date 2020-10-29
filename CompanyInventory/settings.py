@@ -137,5 +137,8 @@ REST_FRAMEWORK = {
     ),
     'EXCEPTION_HANDLER': 'CompanyInventory.exceptions.custom_exception_handler',
     #
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissions',),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'CompanyInventory.permissions.CustomDjangoModelPermission',
+        # 'CompanyInventory.permissions.CustomDjangoObjectPermissions',
+    ),
 }

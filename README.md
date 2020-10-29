@@ -5,15 +5,23 @@
 python version 3.8
 ```bash
 virtualenv -p python3.8 venv
+source venv/bin/activate
+pip install -r requirements.txt
 ./manage.py migrate
 ./manage.py initialsetup
 ```
+note: There will be prompt for username of superuser and password. Normal user's username will start from user1 to 
+user12 and password will be demo123  
 
 ## Models
 
 - Users
 - Company
 - Product
+
+## Diagram
+
+![Database Diagram](db_diagram.png)
 
 ## Roles
 
@@ -37,5 +45,7 @@ virtualenv -p python3.8 venv
 - [x] Role creation
 - [x] Pagination
 - [x] seeder command (faker)
-- [ ] filtering
-- [ ] Permission assigment
+- [ ] filtering (WIP)
+- [x] Permission assigment
+- [x] Model-level permission
+- [ ] Object-level permission (WIP)
