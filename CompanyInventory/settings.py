@@ -118,3 +118,24 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'employee.User'
+
+REST_FRAMEWORK = {
+    'PAGE_SIZE': 10,
+    'DEFAULT_PAGINATION_CLASS':
+        'rest_framework_google_json_style_api.pagination.GoogleJsonStylePageNumberPagination',
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework_google_json_style_api.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+
+        # Any other renders
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework_google_json_style_api.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+        # Any other parsers
+    ),
+    'EXCEPTION_HANDLER': 'CompanyInventory.exceptions.custom_exception_handler',
+    #
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissions',),
+}

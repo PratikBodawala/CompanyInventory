@@ -28,3 +28,14 @@ virtualenv -p python3.8 venv
 - /api/company/{pk}
 - /api/product
 - /api/product/{pk}
+- /api/employee
+- /api/employee/{pk}
+
+## TODO
+- [x] CRUD Inventory (company, product)
+- [x] CRUD Employee
+- [x] Role creation
+- [x] Pagination
+- [x] seeder command (faker)
+- [ ] filtering
+- [ ] Permission assigment

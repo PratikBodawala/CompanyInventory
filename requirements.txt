@@ -1,3 +1,4 @@
 Django~=3.1.2
 djangorestframework~=3.12.1
-faker
+faker~=4.14.0
+django-rest-framework-google-json-style-api~=1.2.2
