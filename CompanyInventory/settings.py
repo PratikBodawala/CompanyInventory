@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '5y^m-(c4i2bco+qa40%08muq+gm1_^-_lvmt!qz59ja3&skm5j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  # TODO deployment checklist
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # TODO deployment checklist
 
 # Application definition
 
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'inventory.apps.InventoryConfig',
     'employee.apps.EmployeeConfig',
 ]
