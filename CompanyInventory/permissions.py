@@ -19,6 +19,8 @@ class CustomDjangoObjectPermissions(permissions.DjangoObjectPermissions):
         self.perms_map['GET'] = ['%(app_label)s.view_%(model_name)s']
 
     def has_object_permission(self, request, view, obj):
+        if request.user.is_superuser:
+            return True
         req_groups = request.user.groups.values_list('name', flat=True)
         if 'INVENTORY_MANAGER' in req_groups and isinstance(obj, Product):
             return obj.company == request.user.company
