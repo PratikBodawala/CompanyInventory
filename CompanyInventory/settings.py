@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'inventory.apps.InventoryConfig',
     'employee.apps.EmployeeConfig',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -141,4 +142,8 @@ REST_FRAMEWORK = {
         'CompanyInventory.permissions.CustomDjangoModelPermission',
         'CompanyInventory.permissions.CustomDjangoObjectPermissions',
     ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
 }

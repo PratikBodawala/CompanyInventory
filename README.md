@@ -48,3 +48,4 @@ user12 and password will be demo123
 - [x] Permission assigment
 - [x] Model-level permission
 - [x] Object-level permission
+- [x] Token Authentication
