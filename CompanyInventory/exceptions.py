@@ -1,5 +1,5 @@
 from django.db.models import ProtectedError
-from rest_framework import status
+from rest_framework import status, exceptions
 from rest_framework.exceptions import ErrorDetail
 from rest_framework.response import Response
 from rest_framework.views import exception_handler
@@ -21,5 +21,8 @@ def custom_exception_handler(exc, context):
             else:
                 data = {'detail': ErrorDetail(exc.args[0], code='protected_error')}
             response = Response(data, status=status.HTTP_400_BAD_REQUEST)
+
+    if isinstance(exc, (exceptions.AuthenticationFailed, exceptions.NotAuthenticated)):
+        response.status_code = status.HTTP_401_UNAUTHORIZED
 
     return response
