@@ -139,6 +139,6 @@ REST_FRAMEWORK = {
     #
     'DEFAULT_PERMISSION_CLASSES': (
         'CompanyInventory.permissions.CustomDjangoModelPermission',
-        # 'CompanyInventory.permissions.CustomDjangoObjectPermissions',
+        'CompanyInventory.permissions.CustomDjangoObjectPermissions',
     ),
 }

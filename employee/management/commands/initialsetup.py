@@ -70,12 +70,18 @@ class Command(BaseCommand):
         group = Group.objects.get(name='INVENTORY_MANAGER')
         group.permissions.set(Permission.objects.filter(codename__contains='product'))
 
-        print('assigning QUALITY_ASSURANCE -> product U')
+        print('assigning QUALITY_ASSURANCE -> product Update')
         group = Group.objects.get(name='QUALITY_ASSURANCE')
         group.permissions.set([Permission.objects.get(codename='change_product'),
                                Permission.objects.get(codename='view_product')])
 
-        print('assigning SALES_MANAGER -> user R and product R')
+        print('assigning SALES_MANAGER -> user Retrieve and product Retrieve')
         group = Group.objects.get(name='SALES_MANAGER')
         group.permissions.set([Permission.objects.get(codename='view_product'),
                                Permission.objects.get(codename='view_user')])
+
+        for role in Group.objects.all():
+            print('#' * 80)
+            print(f'Users with role: {role}')
+            for no, user in enumerate(User.objects.filter(groups=role), start=1):
+                print(f'{no}) {user}')

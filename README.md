@@ -45,7 +45,6 @@ user12 and password will be demo123
 - [x] Role creation
 - [x] Pagination
 - [x] seeder command (faker)
-- [ ] filtering (WIP)
 - [x] Permission assigment
 - [x] Model-level permission
-- [ ] Object-level permission (WIP)
+- [x] Object-level permission
