@@ -38,6 +38,7 @@ user12 and password will be demo123
 - /api/product/{pk}
 - /api/employee
 - /api/employee/{pk}
+- /auth/login
 
 ## TODO
 - [x] CRUD Inventory (company, product)
