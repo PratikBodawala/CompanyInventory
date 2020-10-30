@@ -9,7 +9,8 @@ class UserListCreate(generics.ListCreateAPIView):
     serializer_class = UserSerializer
 
     def get_queryset(self):
-        if 'SALES_MANAGER' in self.request.user.groups.values_list('name', flat=True):
+        if 'SALES_MANAGER' in self.request.user.groups.values_list('name', flat=True) \
+                and not self.request.user.is_superuser:
             return User.objects.filter(groups__name='SALES_MANAGER')
         else:
             return User.objects.all()

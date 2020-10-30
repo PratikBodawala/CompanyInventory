@@ -20,7 +20,8 @@ class ProductListCreate(generics.ListCreateAPIView):
     serializer_class = ProductSerializer
 
     def get_queryset(self):
-        if 'QUALITY_ASSURANCE' in self.request.user.groups.values_list('name', flat=True):
+        if 'QUALITY_ASSURANCE' in self.request.user.groups.values_list('name', flat=True) \
+                or self.request.user.is_superuser:
             return Product.objects.all()
         else:
             return Product.objects.filter(company=self.request.user.company)
