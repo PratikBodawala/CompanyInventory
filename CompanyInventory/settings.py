@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '5y^m-(c4i2bco+qa40%08muq+gm1_^-_lvmt!qz59ja3&skm5j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # TODO deployment checklist
+DEBUG = False  # TODO deployment checklist
 
 ALLOWED_HOSTS = ['*']  # TODO deployment checklist
 
@@ -147,3 +147,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+STATIC_ROOT = 'static'
